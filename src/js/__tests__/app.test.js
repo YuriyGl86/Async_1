@@ -1,6 +1,7 @@
 import GameSavingLoader from '../app';
+import GameSaving from '../gameSaving';
 
-test('wfwef', async (done) => {
+test('testing promise', async (done) => {
   const data = await GameSavingLoader.load();
   expect(data).toEqual({
     id: 9,
@@ -9,5 +10,11 @@ test('wfwef', async (done) => {
       id: 1, name: 'Hitman', level: 10, points: 2000,
     },
   });
+  done();
+});
+
+test('testing promise', async (done) => {
+  const data = await GameSavingLoader.load();
+  expect(data).toBeInstanceOf(GameSaving);
   done();
 });
